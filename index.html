@@ -1,158 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vinnie Designs</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f9ff;
-    color: #222;
-    line-height: 1.6;
-  }
-  a {
-    color: #ff5a5f;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  header {
-    background: linear-gradient(45deg, #ff5a5f, #ffb88c);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  nav {
-    background: white;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-  }
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  nav ul li {
-    margin: 0 1.5rem;
-  }
-  nav ul li a {
-    display: inline-block;
-    padding: 1rem 0;
-    font-weight: 600;
-    color: #222;
-  }
-  nav ul li a:hover {
-    color: #ff5a5f;
-  }
-  section {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-  }
-  section h2 {
-    color: #ff5a5f;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    border-bottom: 3px solid #ffb88c;
-    display: inline-block;
-    padding-bottom: 0.3rem;
-  }
-  /* Home */
-  #home p {
-    font-size: 1.1rem;
-    margin-top: 1rem;
-  }
-  /* Services */
-  #services ul {
-    list-style: disc inside;
-    margin-top: 1rem;
-  }
-  /* Portfolio */
-  #portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 1rem;
-  }
-  .portfolio-item {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  .portfolio-item:hover {
-    transform: scale(1.05);
-  }
-  .portfolio-item img {
-    width: 100%;
-    display: block;
-  }
-  .portfolio-item p {
-    padding: 0.5rem 1rem 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  /* About */
-  #about p {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-  }
-  /* Contact */
-  form {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  form label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-  }
-  form input, form textarea {
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    resize: vertical;
-  }
-  form button {
-    background: #ff5a5f;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.6rem;
-    font-size: 1.1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  form button:hover {
-    background: #e14c50;
-  }
-  footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 4rem;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinnie Designs</title>
+
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f5f9ff;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(45deg, #ff5a5f, #ffb88c);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav ul li {
+      margin: 0 1.5rem;
+    }
+    nav ul li a {
+      display: inline-block;
+      padding: 1rem 0;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      color: #ff5a5f;
+    }
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    section h2 {
+      color: #ff5a5f;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      border-bottom: 3px solid #ffb88c;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    section h3 {
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem;
+      color: #333;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 4rem;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #ff5a5f;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #e14c50;
+    }
+  </style>
 </head>
 <body>
 
@@ -174,7 +130,7 @@
 <section id="home">
   <h2>Welcome to Vinnie Designs</h2>
   <p>We specialize in crafting minimalist, bold logos and vibrant social media posts — from quotes to discount advertisements — to help your brand grab attention globally.</p>
-  <p>Interested? Reach out below or find me on <a href="https://laborx.com" target="_blank" rel="noopener">LaborX</a> to get started.</p>
+  <p>Interested? Reach out below or find me on <a href="https://laborx.com" target="_blank">LaborX</a> to get started.</p>
 </section>
 
 <section id="services">
@@ -185,36 +141,48 @@
   </ul>
 </section>
 
+<!-- PORTFOLIO SECTION -->
 <section id="portfolio">
   <h2>Portfolio</h2>
-  
-  <div class="portfolio-item">
-    <img src="https://via.placeholder.com/400x250/ff5a5f/fff?text=Social+Media+Post+1" alt="Social Media Post 1">
-    <p>Vibrant quote design with bold typography</p>
+
+  <h3>🔹 Logo Designs</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_000000008fa061f99dd1784d018294b4.png" data-lightbox="logos" data-title="Minimalist Logo 1">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_000000008fa061f99dd1784d018294b4.png" alt="Logo 1" style="width:100%; border-radius:8px;">
+    </a>
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000e63c61f9960c3b365cd8052c.png" data-lightbox="logos" data-title="Geometric Logo 2">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000e63c61f9960c3b365cd8052c.png" alt="Logo 2" style="width:100%; border-radius:8px;">
+    </a>
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000f91061f98b16c51bc428e73a.png" data-lightbox="logos" data-title="Clean Logo 3">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000f91061f98b16c51bc428e73a.png" alt="Logo 3" style="width:100%; border-radius:8px;">
+    </a>
   </div>
-  <div class="portfolio-item">
-    <img src="https://via.placeholder.com/400x250/ffb88c/fff?text=Logo+Design+1" alt="Logo Design 1">
-    <p>Minimalist logo with bold lines</p>
+
+  <h3>🔹 Social Media Posts</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_0000000088ec61f9abf5e43c9a345dc2.png" data-lightbox="posts" data-title="Quote Post 1">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_0000000088ec61f9abf5e43c9a345dc2.png" alt="Post 1" style="width:100%; border-radius:8px;">
+    </a>
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000b2b861f6baa2f34257a3a84c.png" data-lightbox="posts" data-title="Promo Post 2">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000b2b861f6baa2f34257a3a84c.png" alt="Post 2" style="width:100%; border-radius:8px;">
+    </a>
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000cc4861f6b1025af42cb1bece.png" data-lightbox="posts" data-title="Social Graphic 3">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000cc4861f6b1025af42cb1bece.png" alt="Post 3" style="width:100%; border-radius:8px;">
+    </a>
+    <a href="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000f31c61f8ab7e8da594b509a9.png" data-lightbox="posts" data-title="Vibrant Post 4">
+      <img src="https://raw.githubusercontent.com/vinnie-designs/vinnie_designs.github.io/main/file_00000000f31c61f8ab7e8da594b509a9.png" alt="Post 4" style="width:100%; border-radius:8px;">
+    </a>
   </div>
-  <div class="portfolio-item">
-    <img src="https://via.placeholder.com/400x250/4a90e2/fff?text=Social+Media+Post+2" alt="Social Media Post 2">
-    <p>Discount advertisement post with colorful accents</p>
-  </div>
-  <div class="portfolio-item">
-    <img src="https://via.placeholder.com/400x250/50e3c2/fff?text=Logo+Design+2" alt="Logo Design 2">
-    <p>Bold, simple logo for brand identity</p>
-  </div>
-  
 </section>
 
 <section id="about">
-  <h2>About Vinnie Designs</h2>
+  <h2>About</h2>
   <p>At Vinnie Designs, we believe that design is the first step toward creating a memorable brand. Our mission is to deliver clean, colorful, and professional visuals that resonate globally, helping you connect with your audience effortlessly.</p>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
-  <form action="#" method="POST" onsubmit="alert('Thank you for reaching out! I will get back to you soon.'); return false;">
+  <form action="#" method="POST" onsubmit="alert('Thanks for reaching out!'); return false;">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Your name" required />
     
@@ -227,13 +195,16 @@
     <button type="submit">Send Message</button>
   </form>
   <p style="text-align:center; margin-top:1rem;">
-    Or find me on <a href="https://laborx.com" target="_blank" rel="noopener">LaborX</a>
+    Or find me on <a href="https://laborx.com" target="_blank">LaborX</a>
   </p>
 </section>
 
 <footer>
-  &copy; 2025 Vinnie Designs | Designed with care
+  &copy; 2025 Vinnie Designs | All rights reserved
 </footer>
+
+<!-- Lightbox JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 </body>
   </html>
